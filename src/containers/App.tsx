@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, ChangeEvent } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+const handleChange = Symbol();
 
 class App extends Component {
+  [handleChange] = (ev: ChangeEvent) => {};
+
   render() {
     return (
       <div className="App">
@@ -20,6 +24,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <input onChange={this[handleChange]} />
       </div>
     );
   }
